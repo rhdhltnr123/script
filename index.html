@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내장객체.html</title>
+</head>
+<body>
+    <script>
+        let screen_with = screen.width;
+        let screen_height = screen.height;
+        console.log(screen_with, screen_height);
+        document.write(`모니터해상도 : 너비${screen_with}`);
+        document.write(`, 높이${screen_height}`);
+
+        let colorDepth = screen.colorDepth;
+        document.write(`<br>colorDepth = ${colorDepth}bit`);
+
+        // 내컴퓨터 주소
+        let host = location.host;
+        console.log(host);
+        document.write(`<br>${host}`);
+
+        let appCodeName = navigator.appCodeName;
+        document.write(`<br>appCodeName: ${appCodeName}`);
+        let appName = navigator.appName;
+        document.write(`<br>appName : ${appName}`);
+
+        let platform = navigator.platform;
+        document.write(`<br>platform: ${platform}`);
+    </script>
+    <h1>디아비스 정보 (깃허브 홈페이지에서 확인)</h1>
+    <script>
+    // userAgent (모든 정보)
+    let info = navigator.userAgent.toLocaleLowerCase();
+    console.log(info);
+    let osTxt = '';
+    // 디바이스 확인 (운영체제 키워드로 찾기)
+    if(info.indexOf('windows') >= 0) {
+        osTxt = '윈도우';
+    } else if (info.indexOf('macintosh') >= 0) {
+        osTxt = '맥킨토시';
+    } else if (info.indexOf('iphone') >= 0) {
+        osTxt = '아이폰';
+    } else if (info.indexOf('android') >= 0) {
+        osTxt = '안드로이드';
+    }
+
+      document.write(`운영체제는 ${osTxt}입니다`)
+    </script>
+    <!-- 129p 연습문제 -->
+</body>
+</html>
